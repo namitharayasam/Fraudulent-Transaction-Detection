@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-image: linear-gradient(to bottom right, #a9f0b9, #2d6d2a);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.total {
+    margin: 5%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 3.5%;
+    font-size: 3em;
+    color: #0d4509;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #2d6d2a;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #effff0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: #165e13;
+    box-shadow: 0px 0px 8px rgba(22, 94, 19, 0.5);
+}
+
+input[type="date"] {
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    border: solid #165e13 1.5px;
+    background-color: #165e13;
+    color: #e3fce5;
+    border-radius: 30px;
+    margin-top: 5px;
+    margin-bottom: 1%;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.button-container {
+    width: 105%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -25px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #114e0d;
+    margin-bottom: 8px;
+}
+
+.active-checkbox {
+    cursor: pointer;
+    font-size: 1em;
+    padding: 9px 35px;
+    border: 1.5px solid #165e13;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    user-select: none;
+}
+
+select {
+    padding: 12px;
+    background-color: #effff0;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="black" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.open-date-container,
+.status-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.status-container {
+    align-items: center;
+}
+
+.long-label {
+    margin-bottom: -15px;
+    text-align: left;  /* Left align the label */
+    width: 100%;
+}
