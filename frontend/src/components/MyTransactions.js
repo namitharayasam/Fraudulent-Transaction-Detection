@@ -4,8 +4,10 @@ import './MyTransactions.css';
 
 const MyTransactions = () => {
   const [transactions, setTransactions] = useState([]);
-  const [newTransaction, setNewTransaction] = useState({ field1: '', field2: '', field3: '', field4: '', field5: '', field6: '', field7: '', field8: '', field9: '' });
-  const [user, setUser] = useState([]);
+  const [newTransaction, setNewTransaction] = useState({
+    field1: '', field2: '', field3: '', field4: '', field5: '', field6: '', field7: '', field8: '', field9: ''
+  });
+  const [user, setUser] = useState({}); // Initialize as an empty object
 
   useEffect(() => {
     // Fetch transactions data from the backend
@@ -44,7 +46,9 @@ const MyTransactions = () => {
     try {
       const response = await axios.post('http://localhost:8000/add_transaction', newTransaction);
       setTransactions([...transactions, response.data]);
-      setNewTransaction({ field1: '', field2: '', field3: '', field4: '' }); // Reset form
+      setNewTransaction({
+        field1: '', field2: '', field3: '', field4: '', field5: '', field6: '', field7: '', field8: '', field9: ''
+      }); // Reset all fields
     } catch (error) {
       console.error('Error adding transaction:', error);
     }
@@ -53,7 +57,7 @@ const MyTransactions = () => {
   return (
     <div>
       <h2>My Transactions</h2>
-      <span> user.name </span>
+      {user.name && <span>{user.name}</span>} {/* Display user name if available */}
       <div className="transactions-container">
         <table className="transactions-table">
           <thead>
@@ -83,11 +87,11 @@ const MyTransactions = () => {
               <td><input type="text" name="field2" value={newTransaction.field2} onChange={handleInputChange} /></td>
               <td><input type="text" name="field3" value={newTransaction.field3} onChange={handleInputChange} /></td>
               <td><input type="text" name="field4" value={newTransaction.field4} onChange={handleInputChange} /></td>
-              <td><input type="text" name="field1" value={newTransaction.field5} onChange={handleInputChange} /></td>
-              <td><input type="text" name="field2" value={newTransaction.field6} onChange={handleInputChange} /></td>
-              <td><input type="text" name="field3" value={newTransaction.field7} onChange={handleInputChange} /></td>
-              <td><input type="text" name="field4" value={newTransaction.field8} onChange={handleInputChange} /></td>
-              <td><input type="text" name="field4" value={newTransaction.field9} onChange={handleInputChange} /></td>
+              <td><input type="text" name="field5" value={newTransaction.field5} onChange={handleInputChange} /></td>
+              <td><input type="text" name="field6" value={newTransaction.field6} onChange={handleInputChange} /></td>
+              <td><input type="text" name="field7" value={newTransaction.field7} onChange={handleInputChange} /></td>
+              <td><input type="text" name="field8" value={newTransaction.field8} onChange={handleInputChange} /></td>
+              <td><input type="text" name="field9" value={newTransaction.field9} onChange={handleInputChange} /></td>
             </tr>
           </tbody>
         </table>
@@ -98,3 +102,4 @@ const MyTransactions = () => {
 };
 
 export default MyTransactions;
+
