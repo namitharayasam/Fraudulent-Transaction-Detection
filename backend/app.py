@@ -12,7 +12,7 @@ def get_db_connection():
     conn = mysql.connector.connect(
         host="localhost",  # Update with your MySQL host
         user="root",       # Update with your MySQL username
-        password="Namitha@2004", # Update with your MySQL password
+        password="your_password", # Update with your MySQL password
         database="BankSystem"  # Update with your database name
     )
     return conn
